@@ -8,11 +8,11 @@ let letrasUsadas = [];
 document.querySelector('.word').textContent = palabraMostrada.join(' ');
 document.getElementById('intentos').textContent = intentosRestantes;
 
-// Función para actualizar el estado del juego
+// acutalizar el juego
 function actualizarJuego(letra) {
   let acierto = false;
 
-  // Revisar si la letra está en la palabra
+  // isertar palabra
   for (let i = 0; i < palabraSeleccionada.length; i++) {
     if (palabraSeleccionada[i] === letra) {
       palabraMostrada[i] = letra;
@@ -25,12 +25,12 @@ function actualizarJuego(letra) {
     intentosRestantes--;
   }
 
-  // Actualizar la interfaz
+  // Actualizar la texto
   document.querySelector('.word').textContent = palabraMostrada.join(' ');
   document.getElementById('intentos').textContent = intentosRestantes;
 }
 
-// Verificar si ganó o perdió
+// verificar si ganó o nel
 function verificarFinDelJuego() {
   if (!palabraMostrada.includes('_')) {
     const imagenUrl = "https://i.pinimg.com/564x/bc/17/f1/bc17f18b731258394538b18df123c133.jpg";
@@ -53,17 +53,16 @@ function agregarImg(im, text) {
   document.getElementById('imagen').appendChild(img);
 }
 
-// Evento para el botón de envío
-document.getElementById('submit').addEventListener('click', manejarEnvioLetra);
 
-// Evento para presionar Enter
+//ejecutar el juego :v
+document.getElementById('submit').addEventListener('click', manejarEnvioLetra);
 document.getElementById('texto').addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     manejarEnvioLetra();
   }
 });
 
-// Función para manejar el envío de la letra
+// envio de la letra
 function manejarEnvioLetra() {
   const input = document.getElementById('texto');
   const letra = input.value.toLowerCase();
