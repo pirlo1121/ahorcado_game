@@ -65,3 +65,10 @@ document.getElementById('submit').addEventListener('click', () => {
     input.value = '';
     input.focus();
 });
+
+window.addEventListener('load', () => {
+    const imagen = document.getElementById('imagen');
+    if (imagen) {
+        imagen.innerHTML = ''; 
+    }
+});
