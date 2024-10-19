@@ -45,10 +45,14 @@ button{
 }
 img{
     margin: 0 auto;
+    width: 400px;
+    object-fit: contain;
 }
-@media(max-width:900px){
+/* @media(max-width:900px){
     img{
         width: 500px;
         object-fit: cover;
     }
-}
+} */
+
+

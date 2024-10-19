@@ -35,16 +35,22 @@ function actualizarJuego(letra) {
 // Verificar si ganó o perdió
 function verificarFinDelJuego() {
     if (!palabraMostrada.includes('_')) {
-        const img = document.createElement('img');  
-        img.src = "https://imgs.search.brave.com/BNq2-zWp2fnGB4D664PCXbqumEFCCtitvukwcn7oba4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuaW5kZXBlbmRl/bnQuY28udWsvMjAy/NC8wMS8xMy8xNC9u/ZXdGaWxlLTUuanBn";  
-        img.alt = 'win'; 
-        document.getElementById('imagen').appendChild(img)
+        const imagneUrl = "https://i.pinimg.com/564x/bc/17/f1/bc17f18b731258394538b18df123c133.jpg"
+        agregarImg(imagneUrl,"win")
         document.querySelector('.message').textContent = '¡Ganaste!';
         document.getElementById('submit').disabled = true;
     } else if (intentosRestantes === 0) {
+        const imagneUrl= "https://i.pinimg.com/enabled_lo/564x/d7/7f/be/d77fbe9d6d0993134f52572064565ef9.jpg"
+        agregarImg(imagneUrl,"LOSER")
         document.querySelector('.message').textContent = `Perdiste. La palabra era: ${palabraSeleccionada}`;
         document.getElementById('submit').disabled = true;
     }
+}
+function agregarImg(im, text){
+    const img = document.createElement('img');  
+    img.src = im;  
+    img.alt = text; 
+    document.getElementById('imagen').appendChild(img)
 }
 
 // Evento de adivinar
