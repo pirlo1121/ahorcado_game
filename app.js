@@ -1,7 +1,7 @@
-const palabras = ["pirlo", "palmer", "luis miguel", "jerusalen", "cafe", "hijole", "arepas", "estefania", "magno", "diogenes", "jesus", "messi", "merequetengue"];
+const palabras = ["pirlo", "palmer", "aguacate", "jerusalen", "cafe", "hijole", "arepas", "arepas", "magno", "diogenes", "jesus", "messi", "merequetengue", "aleluya","pendejo"];
 let palabraSeleccionada = palabras[Math.floor(Math.random() * palabras.length)];
 
-let intentosRestantes = 6;
+let intentosRestantes = 7;
 let palabraMostrada = Array(palabraSeleccionada.length).fill('_');
 let letrasUsadas = [];
 
@@ -34,6 +34,8 @@ function actualizarJuego(letra) {
 function verificarFinDelJuego() {
   if (!palabraMostrada.includes('_')) {
     const imagenUrl = "https://i.pinimg.com/564x/bc/17/f1/bc17f18b731258394538b18df123c133.jpg";
+    const textoIntentos = document.getElementById('text-intentos')
+    textoIntentos.style.display = "none";
     agregarImg(imagenUrl, "¡Ganaste!");
     document.querySelector('.message').textContent = '¡Ganaste!';
     document.getElementById('submit').disabled = true;
