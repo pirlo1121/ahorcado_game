@@ -7,17 +7,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1> Ahorcado</h1>
-    <p class="word"></p>
-    <p class="message"></p>
-    <p id="text-intentos">Intentos restantes: <span id="intentos"></span></p>
-    <input type="text" id="texto" maxlength="1" placeholder="Ingresa una letra"/>
-    <label for="letra"></label>
-    <button id="submit">Adivinar</button>
-    <div id="imagen">
+    <div class="container">
+        <h1>Ahorcado</h1>
+        
+        <div id="selection-screen">
+            <h2>Selecciona una categoría</h2>
+            <div id="category-selection">
+                <!-- Categories injected here -->
+            </div>
+        </div>
+
+        <div id="game-area">
+            <h2 id="current-category"></h2>
+            <p class="word"></p>
+            <p class="message"></p>
+            <p id="text-intentos">Intentos restantes: <span id="intentos"></span></p>
+            
+            <div class="input-area">
+                <input type="text" id="texto" maxlength="1" placeholder="?" autocomplete="off"/>
+                <button id="submit">Adivinar</button>
+            </div>
+            
+            <button id="reset-btn" style="background: var(--surface-dark); margin-top: 10px; display: none;">Jugar de nuevo</button>
+
+            <div id="imagen">
+            </div>
+        </div>
     </div>
 
-    <script src="app.js">
-    </script>
+    <!-- Load data first -->
+    <script src="words.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
